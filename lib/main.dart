@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-void main() {
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebase_app_installations/firebase_app_installations.dart';
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  final fcmToken = await FirebaseMessaging.instance.getToken();
+  FirebaseMessaging.instance.onTokenRefresh
+    .listen((fcmToken) {
+      print("fcmToken: ${fcmToken}");
+    })
+    .onError((err) {
+      // Error getting token.
+      print("err: ${err}");
+    });
   runApp(const MyApp());
 }
-
-@override
-void initState() {
-  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-}
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
