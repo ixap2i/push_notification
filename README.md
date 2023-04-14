@@ -3,14 +3,41 @@
 A new Flutter project.
 
 ## Getting Started
+<!-- you need firebase account -->
+firebase login
 
-This project is a starting point for a Flutter application.
+<!-- activate flutter cli -->
+dart pub global activate flutterfire_cli
 
-A few resources to get you started if this is your first Flutter project:
+flutterfire configure
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<!-- you can skip below command by flutter pub get -->
+flutter pub add firebase_in_app_messaging
+flutter pub add firebase_messaging
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+you have to make below file, and fill out your keys
+
+web/firebase-messaging-sw.js
+```
+importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js");
+importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js");
+
+firebase.initializeApp({
+  apiKey: "...",
+  authDomain: "...",
+  projectId: "...",
+  storageBucket: "...",
+  messagingSenderId: "...",
+  appId: "...",
+});
+
+const messaging = firebase.messaging();
+
+// Optional:
+messaging.onBackgroundMessage((message) => {
+  console.log("onBackgroundMessage", message);
+});
+```
+
+<!-- you can choice platform at commandline -->
+flutter run
