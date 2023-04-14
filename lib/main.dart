@@ -3,18 +3,20 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_app_installations/firebase_app_installations.dart';
+import 'package:logger/logger.dart';
+final logger = Logger();
 void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  final fcmToken = await FirebaseMessaging.instance.getToken();
+  final fcmToken = await FirebaseMessaging.instance.getToken(vapidKey: 'BJwDIMxSlGm9u2YvXPszyv9zx993_3zf8J8EwKZKO6z5WS5_xfLuvWJLgiQojob26X8jcKwaIsx4Rs9hDLW8Cbs');
   FirebaseMessaging.instance.onTokenRefresh
     .listen((fcmToken) {
-      print("fcmToken: ${fcmToken}");
+      logger.v("fcmToken: $fcmToken");
     })
     .onError((err) {
       // Error getting token.
-      print("err: ${err}");
+      logger.v("err: ${err}");
     });
   runApp(const MyApp());
 }
