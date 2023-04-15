@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:firebase_app_installations/firebase_app_installations.dart';
 import 'package:logger/logger.dart';
+
 final logger = Logger();
+
 void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  final fcmToken = await FirebaseMessaging.instance.getToken(vapidKey: 'BJwDIMxSlGm9u2YvXPszyv9zx993_3zf8J8EwKZKO6z5WS5_xfLuvWJLgiQojob26X8jcKwaIsx4Rs9hDLW8Cbs');
+  final fcmToken = await FirebaseMessaging.instance.getToken(vapidKey: 'your_vapid_key');
   FirebaseMessaging.instance.onTokenRefresh
     .listen((fcmToken) {
       logger.v("fcmToken: $fcmToken");
