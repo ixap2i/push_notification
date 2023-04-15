@@ -3,17 +3,17 @@
 A new Flutter project.
 
 ## Getting Started
-<!-- you need firebase account -->
-firebase login
+### you need firebase account
+`firebase login`
 
-<!-- activate flutter cli -->
-dart pub global activate flutterfire_cli
+### activate flutter cli
+`dart pub global activate flutterfire_cli`
 
-flutterfire configure
+`flutterfire configure`
 
-<!-- you can skip below command by flutter pub get -->
-flutter pub add firebase_in_app_messaging
-flutter pub add firebase_messaging
+### you can skip below command by flutter pub get
+`flutter pub add firebase_in_app_messaging`
+`flutter pub add firebase_messaging`
 
 you have to make below file, and fill out your keys
 
@@ -39,5 +39,5 @@ messaging.onBackgroundMessage((message) => {
 });
 ```
 
-<!-- you can choice platform at commandline -->
-flutter run
+### you can choice platform at commandline
+`flutter run`
