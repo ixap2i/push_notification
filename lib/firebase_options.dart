@@ -44,40 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAzmMBJgb_9t5aPnnCGWo5UhZh4TPPwMdQ',
-    appId: '1:55895037611:web:01a70c5e2ad26ad72ec9ee',
-    messagingSenderId: '55895037611',
+    apiKey: '...',
+    appId: '1:...:web:...',
+    messagingSenderId: '...',
     projectId: 'push-notification-1e0ac',
     authDomain: 'push-notification-1e0ac.firebaseapp.com',
     storageBucket: 'push-notification-1e0ac.appspot.com',
-    measurementId: 'G-5ZD6FCXWNE',
+    measurementId: '...',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD-_nnQqosI68J5qWl1EHPnzJ7sHxSM5zY',
-    appId: '1:55895037611:android:842fb07eec7737fa2ec9ee',
-    messagingSenderId: '55895037611',
+    apiKey: '...',
+    appId: '1:...:android:...',
+    messagingSenderId: '...',
     projectId: 'push-notification-1e0ac',
     storageBucket: 'push-notification-1e0ac.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD7DLJ3n753ixNT5rZrerAGK7YxN8vlt9c',
-    appId: '1:55895037611:ios:5de1ae01f04c45292ec9ee',
-    messagingSenderId: '55895037611',
+    apiKey: '...',
+    appId: '1:...:ios:251d5c446bbe40032ec9ee',
+    messagingSenderId: '...',
     projectId: 'push-notification-1e0ac',
     storageBucket: 'push-notification-1e0ac.appspot.com',
-    iosClientId: '55895037611-8m5akcrbldfkti2im4plkrtsq7hp19sh.apps.googleusercontent.com',
+    iosClientId: '....apps.googleusercontent.com',
     iosBundleId: 'com.example.pushNotification',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD7DLJ3n753ixNT5rZrerAGK7YxN8vlt9c',
-    appId: '1:55895037611:ios:5de1ae01f04c45292ec9ee',
-    messagingSenderId: '55895037611',
+    apiKey: '...',
+    appId: '1:...:ios:251d5c446bbe40032ec9ee',
+    messagingSenderId: '...',
     projectId: 'push-notification-1e0ac',
     storageBucket: 'push-notification-1e0ac.appspot.com',
-    iosClientId: '55895037611-8m5akcrbldfkti2im4plkrtsq7hp19sh.apps.googleusercontent.com',
+    iosClientId: '....apps.googleusercontent.com',
     iosBundleId: 'com.example.pushNotification',
   );
 }
